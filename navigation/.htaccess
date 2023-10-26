@@ -1,0 +1,10 @@
+ErrorDocument 400 https://navigation.000.pe/400/
+ErrorDocument 401 https://navigation.000.pe/401/
+ErrorDocument 403 https://navigation.000.pe/403/
+ErrorDocument 404 https://navigation.000.pe/404/
+ErrorDocument 503 https://navigation.000.pe/503/
+RewriteEngine On
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:CF-Visitor} !{"scheme":"https"}
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
