@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://umatilla.github.io/sitemap.xml
